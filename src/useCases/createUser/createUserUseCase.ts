@@ -29,7 +29,7 @@ export class CreateUserUseCase {
                 email: 'team@sunny.com'
             },
             subject: `Seja bem-vindo ao Sunny, ${data.name}!`,
-            body: `<p>Olá ${data.name}, seu ID é ${user.id} e você já pode fazer login com seu e-mail (${data.email}) e sua senha (${data.password}).</p>`
+            body: `<p>Olá ${data.name}, seu ID é ${user.id} (${data.role}) e você já pode fazer login com seu e-mail (${data.email}) e sua senha (${user.password}).</p>`
         });
     }
 }
