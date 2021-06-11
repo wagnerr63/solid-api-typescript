@@ -1,12 +1,14 @@
 import { User } from "../../entities/User";
+import { ITokenProvider } from "../../providers/TokenProvider/ITokenProvider";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 import { ILoginUserRequestDTO, ILoginUserResponseDTO } from "./loginUserDTO";
 
 const md5 = require('md5');
 
-class LoginUserUseCase {
+export class LoginUserUseCase {
     constructor(
         private usersRepository: IUsersRepository,
+        private tokenProvider: ITokenProvider
     ){}
 
     async execute(data: ILoginUserRequestDTO): Promise<ILoginUserResponseDTO>  {
@@ -19,6 +21,20 @@ class LoginUserUseCase {
             throw new Error('Invalid login.');
         }
 
-        // const tokenJWT = some JWT provider
+        const token = this.tokenProvider.encrypt(
+            { 
+                id: userByEmail.id,
+                name: userByEmail.name,
+                email: userByEmail.email,
+                role: userByEmail.role
+            });
+            console.log('token', token);        
+        return {
+            id: userByEmail.id,
+            name: userByEmail.name,
+            email: userByEmail.email,
+            role: userByEmail.role,
+            token,
+        }
     }
 }

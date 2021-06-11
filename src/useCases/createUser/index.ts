@@ -1,4 +1,4 @@
-import { MailtrapMailProvider } from "../../providers/implamentations/MailTrapMailProvider";
+import { MailtrapMailProvider } from "../../providers/MailProvider/implamentations/MailTrapMailProvider";
 import { PostgresUsersRepository } from "../../repositories/implamentations/PostgresUsersReposity";
 import { CreateUserController } from "./createUserController";
 import { CreateUserUseCase } from "./createUserUseCase";

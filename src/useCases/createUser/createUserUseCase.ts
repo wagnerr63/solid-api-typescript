@@ -1,5 +1,5 @@
 import { User } from "../../entities/User";
-import { IMailProvider } from "../../providers/IMailProvider";
+import { IMailProvider } from "../../providers/MailProvider/IMailProvider";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 import { ICreateUserRequestDTO } from "./createUserDTO";
 
