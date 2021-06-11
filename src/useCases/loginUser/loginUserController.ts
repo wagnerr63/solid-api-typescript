@@ -1,4 +1,4 @@
-import {Request, Response } from 'express';
+import { Request, Response } from 'express';
 import { LoginUserUseCase } from './loginUserUseCase'
 
 export class LoginUserController {

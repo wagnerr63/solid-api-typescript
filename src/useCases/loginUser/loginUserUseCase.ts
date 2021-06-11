@@ -28,7 +28,7 @@ export class LoginUserUseCase {
                 email: userByEmail.email,
                 role: userByEmail.role
             });
-            console.log('token', token);        
+                    
         return {
             id: userByEmail.id,
             name: userByEmail.name,
